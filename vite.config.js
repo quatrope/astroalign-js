@@ -5,11 +5,11 @@ export default defineConfig({
     lib: {
       entry: 'src/index.js',
       name: 'AstroalignJS',
-      fileName: 'astroalign-js',
+      fileName: 'astroalign',
       formats: ['es']
     },
     rollupOptions: {
       external: ['kdt', 'ml-ransac', 'ndarray-warp']
     }
   }
-}) 
+})

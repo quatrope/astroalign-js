@@ -1,14 +1,14 @@
 {
-  "name": "astroalign-js",
+  "name": "astroalign",
   "version": "0.1.0",
   "description": "A Javascript library for aligning images using the Astroalign algorithm.",
   "author": "Martin Beroiz",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/astroalign-js.js",
+  "main": "./dist/astroalign.js",
   "exports": {
     ".": {
-      "import": "./dist/astroalign-js.js"
+      "import": "./dist/astroalign.js"
     }
   },
   "files": [
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run clean && vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist"
   },
