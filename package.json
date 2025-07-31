@@ -16,16 +16,19 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm run clean && vite build",
+    "build": "rm -rf dist && vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist"
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "clean": "rm -rf node_modules dist"
   },
   "devDependencies": {
-    "vite": "^7.0.4"
+    "vite": "^7.0.4",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
-    "kdt": "^0.1.0",
-    "ml-ransac": "^1.0.0",
-    "ndarray-warp": "^0.1.1"
+    "ndarray-warp": "^0.1.1",
+    "nudged": "^2.1.1",
+    "static-kdtree": "^1.0.2"
   }
 }
