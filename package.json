@@ -20,7 +20,8 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "clean": "rm -rf node_modules dist"
+    "clean": "rm -rf node_modules dist",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "devDependencies": {
     "vite": "^7.0.4",
