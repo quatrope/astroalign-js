@@ -1,6 +1,6 @@
 {
   "name": "astroalign",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Javascript library for aligning images using the Astroalign algorithm.",
   "author": "Martin Beroiz",
   "license": "MIT",
