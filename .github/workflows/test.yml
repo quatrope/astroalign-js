@@ -1,0 +1,53 @@
+name: Test and Build
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test on Node.js ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Run tests
+      run: npm test
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Verify build output
+      run: |
+        echo "Checking build artifacts..."
+        ls -la dist/
+        
+        if [ ! -f "dist/astroalign.js" ]; then
+          echo "Build failed: dist/astroalign.js not found"
+          exit 1
+        fi
+        
+        if [ ! -s "dist/astroalign.js" ]; then
+          echo "Build file is empty"
+          exit 1
+        fi
+        
+        echo "Build successful"
+    
+    - name: Test built version
+      run: npm test
