@@ -29,24 +29,24 @@ npm run test
 ## Usage example
 
 ```js
-const source_points = [
-  [0.01, 0.02],
-  [2.01, 0.13],
-  [0.02, 1.05],
-  [2.03, 1.02],
-  [-1.05, -1.01],
-  [1.02, -1.02],
-  [-1.07, 0.04],
+const { findTransform } = await import("astroalign");
+const sourcePoints = [
+  [ 105, 165 ],
+  [ 397.5, 75 ],
+  [ 277.5, 112.5 ],
+  [ 757.5, 720 ],
+  [ 97.5, 765 ],
+  [ 532.5, 150 ]
 ];
-const target_points = [
-  [ 2.67, 4.85 ],
-  [ 8.77, 5.428 ],
-  [ 6.26, 5.20 ],
-  [ 10.48, 20.10 ],
-  [ -2.05, 15.88 ],
-  [ 10.69, 7.85 ]
-]
-const [transf, [source_list, target_list]] = findTransform(source_points, target_points);
+const targetPoints = [
+  [ 509.81, 333.11 ],
+  [ -302.01, 1117.12 ],
+  [ 638.46, 1433.61 ],
+  [ 653.85, 514.54 ],
+  [ 321.99, 316.20 ],
+  [ 52.80, 289.93 ]
+];
+const [transf, [sourceList, targetList]] = findTransform(sourcePoints, targetPoints);
 ```
 
-Where `t_est` is a [nudged](https://www.npmjs.com/package/nudged) TSR transformation.
+Where `transf` is a [nudged](https://www.npmjs.com/package/nudged) TSR transformation.
