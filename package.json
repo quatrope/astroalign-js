@@ -5,6 +5,14 @@
   "author": "Martin Beroiz",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quatrope/astroalign-js.git"
+  },
+  "homepage": "https://github.com/quatrope/astroalign-js#readme",
+  "bugs": {
+    "url": "https://github.com/quatrope/astroalign-js/issues"
+  },
   "main": "./dist/astroalign.js",
   "exports": {
     ".": {
